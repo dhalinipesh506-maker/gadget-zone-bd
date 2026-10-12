@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Gadget Zone BD — বাংলাদেশে মোবাইল ও গ্যাজেট কেনাকাটা">
+  <title>Gadget Zone BD | স্মার্ট গ্যাজেট, স্মার্ট পছন্দ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Gadget Zone BD হোম"><span class="brand-mark">GZ</span><span>Gadget Zone <b>BD</b><small>স্মার্ট গ্যাজেট, স্মার্ট পছন্দ</small></span></a>
+    <button id="cartToggle" class="cart-button" aria-label="কার্ট খুলুন">🛒 <span>কার্ট</span> <b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">GADGETS • MADE SIMPLE</span>
+        <h1>আপনার পছন্দের গ্যাজেট<br><span>এখন হাতের নাগালে</span></h1>
+        <p>মোবাইল, ইয়ারবাডস, চার্জার ও স্মার্টওয়াচ — সহজ অর্ডার, বাংলাদেশজুড়ে কেনাকাটা।</p>
+        <a class="primary-link" href="#products">পণ্য দেখুন <span>→</span></a>
+        <div class="hero-notes"><span>✓ ক্যাশ অন ডেলিভারি</span><span>✓ সহজ অর্ডার</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="phone-art"><div class="phone-screen"><div class="screen-glow"></div><span>GZ</span><small>GADGET ZONE</small></div></div><div class="floating-chip chip-a">NEW ARRIVALS</div><div class="floating-chip chip-b">৳ BDT</div></div>
+    </section>
+
+    <section class="trust-row" aria-label="সুবিধা"><div><span>01</span><p><b>সহজ অর্ডার</b><small>কয়েক ধাপেই অর্ডার</small></p></div><div><span>02</span><p><b>ক্যাশ অন ডেলিভারি</b><small>পণ্য পেয়ে মূল্য দিন</small></p></div><div><span>03</span><p><b>বাংলাদেশি মূল্য</b><small>সব দাম বাংলাদেশি টাকায়</small></p></div></section>
+
+    <section class="shop-section" id="products">
+      <div class="section-heading"><div><span class="eyebrow">EXPLORE OUR STORE</span><h2>গ্যাজেট কালেকশন</h2><p>আপনার দৈনন্দিন জীবনের জন্য দরকারি টেক।</p></div><span class="product-total" id="productTotal">পণ্য লোড হচ্ছে…</span></div>
+      <div class="toolbar"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="পণ্যের নাম লিখে খুঁজুন…" aria-label="পণ্য খুঁজুন"></label><div class="category-list" id="categoryList"><button class="category active" data-category="সব">সব পণ্য</button><button class="category" data-category="Mobile">মোবাইল</button><button class="category" data-category="Earbuds">ইয়ারবাডস</button><button class="category" data-category="Chargers">চার্জার</button><button class="category" data-category="Smartwatches">স্মার্টওয়াচ</button></div></div>
+      <div class="product-grid" id="productGrid"><div class="loading-card">পণ্য প্রস্তুত হচ্ছে…</div></div>
+    </section>
+
+    <section class="banner"><div><span class="eyebrow">SHOP WITH CONFIDENCE</span><h2>প্রযুক্তি হোক আরও সহজ</h2><p>পছন্দের গ্যাজেট বেছে নিন, কার্টে যোগ করুন এবং ক্যাশ অন ডেলিভারিতে অর্ডার দিন।</p></div><a href="#products" class="outline-link">কেনাকাটা শুরু করুন ↗</a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">GZ</span><span>Gadget Zone <b>BD</b><small>স্মার্ট গ্যাজেট, স্মার্ট পছন্দ</small></span></a><p>© <span id="year"></span> Gadget Zone BD. সর্বস্বত্ব সংরক্ষিত।</p><small>পণ্যের মূল্য ও স্টক নমুনা হিসেবে দেখানো হয়েছে। অর্ডারের আগে যাচাই করুন।</small></footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="আপনার কার্ট" aria-hidden="true">
+    <div class="drawer-heading"><div><span class="eyebrow">YOUR SELECTION</span><h2>আপনার কার্ট</h2></div><button id="cartClose" class="icon-button" aria-label="কার্ট বন্ধ করুন">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty-cart">আপনার কার্ট এখনো খালি।</p></div>
+    <div class="cart-summary"><div><span>সাবটোটাল</span><b id="cartSubtotal">৳০</b></div><small>ডেলিভারি চার্জ ফোনে/অর্ডার নিশ্চিত করার সময় জানানো হবে।</small><button id="checkoutOpen" class="primary-button" disabled>চেকআউটে যান →</button></div>
+  </aside>
+
+  <div class="modal-backdrop" id="checkoutBackdrop">
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="drawer-heading"><div><span class="eyebrow">ALMOST THERE</span><h2 id="checkoutTitle">অর্ডার সম্পন্ন করুন</h2></div><button id="checkoutClose" class="icon-button" aria-label="বন্ধ করুন">✕</button></div>
+      <div id="checkoutMessage" class="notice" hidden></div>
+      <form id="checkoutForm">
+        <label>আপনার নাম<input name="name" autocomplete="name" required minlength="2" maxlength="100" placeholder="সম্পূর্ণ নাম"></label>
+        <label>মোবাইল নম্বর<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="(?:\\+?88)?01[3-9][0-9]{8}" placeholder="01XXXXXXXXX"><small>বাংলাদেশি মোবাইল নম্বর দিন।</small></label>
+        <label>সম্পূর্ণ ঠিকানা<textarea name="address" autocomplete="street-address" required minlength="8" maxlength="500" rows="3" placeholder="বাড়ি/রোড, এলাকা, জেলা"></textarea></label>
+        <div class="payment-choice"><span class="payment-icon">৳</span><span><b>Cash on Delivery (COD)</b><small>পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন</small></span><span class="selected-dot">✓</span></div>
+        <div class="checkout-total"><span>অর্ডারের সাবটোটাল</span><b id="checkoutSubtotal">৳০</b></div>
+        <p class="secure-note">আপনার অর্ডার সার্ভারে যাচাই করে সংরক্ষণের চেষ্টা করা হবে। অনলাইন পেমেন্ট এখনো চালু নয়।</p>
+        <button class="primary-button" id="placeOrderButton" type="submit">COD অর্ডার কনফার্ম করুন</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
